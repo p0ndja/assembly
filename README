@@ -1,0 +1,17 @@
+Author:
+
+    633040151-4 Jirathon Chaisuk
+    633040166-1 Palapon Soontornpas
+
+command line:
+
+    yasm -f elf64 -g dwarf2 -o readfile.o readfile.s
+    yasm -f elf64 -g dwarf2 -o savefile.o savefile.s
+    yasm -f elf64 -g dwarf2 -o StringLength.o StringLength.s
+    yasm -f elf64 -g dwarf2 -o PrintableString.o PrintableString.s
+    yasm -f elf64 -g dwarf2 -o display.o display.s
+    yasm -g dwarf2 -f elf64 main.s -l main.lst
+
+    gcc -g -no-pie -o np_remove main.o readfile.o display.o PrintableString.o StringLength.o savefile.o
+    
+    ./np_remove <input.txt> <output.txt>
